@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>90-Day Strategic Vision: Director, Generation AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy-dark: #0F1D35;
+  --navy-light: #2D4470;
+  --teal: #00A3E0;
+  --teal-dark: #0082B4;
+  --teal-light: #E5F5FC;
+  --slate: #F4F6F9;
+  --slate-dark: #E2E6EC;
+  --ink: #1A1A2E;
+  --ink-light: #4A4A5A;
+  --ink-muted: #7A7A8A;
+  --white: #FFFFFF;
+  --orange: #F5A623;
+  --orange-dark: #D98E1C;
+  --orange-light: #FEF3E0;
+  --green: #2E7D32;
+  --green-light: #E8F5E9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--slate);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════ COVER PAGE ═══════ */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 80vw;
+  height: 80vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,163,224,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+}
+
+.cover-badge {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cover-badge::before,
+.cover-badge::after {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: var(--teal);
+  opacity: 0.5;
+}
+
+.cover h1 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--white);
+  text-align: center;
+  line-height: 1.15;
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+
+.cover-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ═══════ NAV ═══════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--slate-dark);
+  padding: 0 2rem;
+  overflow-x: auto;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+}
+
+.nav a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding: 1rem 1.2rem;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav a:hover { color: var(--navy); border-bottom-color: var(--teal); }
+
+/* ═══════ LAYOUT ═══════ */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--slate-dark);
+}
+
+section:last-child { border-bottom: none; }
+
+.section-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.85rem;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.section-lead {
+  font-size: 1rem;
+  color: var(--ink-light);
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+  line-height: 1.65;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+/* ═══════ HERO STAT BANNER ═══════ */
+.hero-stat {
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--navy);
+  border-radius: 2px;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.hero-stat-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3rem;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.hero-stat-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.hero-stat-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 0.3rem;
+}
+
+/* ═══════ BIG NUMBER ROW ═══════ */
+.big-number-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.big-number-card {
+  background: var(--white);
+  border: 1px solid var(--slate-dark);
+  border-radius: 2px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.big-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.big-number--teal { color: var(--teal-dark); }
+.big-number--orange { color: var(--orange); }
+
+.big-number-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.big-number-desc {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+/* ═══════ CARDS ═══════ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--slate-dark);
+  border-radius: 2px;
+  padding: 1.75rem;
+  position: relative;
+}
+
+.card--wide { grid-column: 1 / -1; }
+
+.card-type {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 0.85rem;
+}
+
+.card-type--navy { background: #E8EEF6; color: var(--navy); }
+.card-type--teal { background: var(--teal-light); color: var(--teal-dark); }
+.card-type--orange { background: var(--orange-light); color: var(--orange-dark); }
+.card-type--green { background: var(--green-light); color: var(--green); }
+
+.card h3 { font-size: 1.05rem; color: var(--ink); margin-bottom: 0.5rem; }
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 0.4rem 0;
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+.card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* ═══════ INSIGHT CALLOUTS ═══════ */
+.insight {
+  border-left: 3px solid var(--teal);
+  background: var(--teal-light);
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  line-height: 1.55;
+  margin-top: 1rem;
+}
+
+.insight strong { color: var(--ink); }
+.insight--orange { background: var(--orange-light); border-left-color: var(--orange); }
+
+/* ═══════ PHASE TIMELINE ═══════ */
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.phase-badge {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.phase-badge--1 { background: var(--teal); }
+.phase-badge--2 { background: var(--navy); }
+.phase-badge--3 { background: var(--orange); color: var(--white); }
+
+/* ═══════ OPTIONS GRID ═══════ */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.option-card {
+  background: var(--white);
+  border: 1px solid var(--slate-dark);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.option-header {
+  padding: 1rem 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.option-header--a { background: var(--teal-dark); }
+.option-header--b { background: var(--navy); }
+.option-header--c { background: var(--orange); color: var(--white); }
+
+.option-body {
+  padding: 1.25rem;
+}
+
+.option-body h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.option-body p {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  line-height: 1.55;
+}
+
+.option-body .condition {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ═══════ CONSTANTS ═══════ */
+.constants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.constant-card {
+  background: var(--navy);
+  border-radius: 2px;
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.constant-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.constant-card h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.constant-card p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+/* ═══════ TIMELINE ═══════ */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 16.67%;
+  right: 16.67%;
+  height: 3px;
+  background: var(--slate-dark);
+  z-index: 0;
+}
+
+.timeline-phase {
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin: 20px auto 16px;
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--slate-dark);
+}
+
+.timeline-dot--1 { background: var(--teal); box-shadow: 0 0 0 2px var(--teal); }
+.timeline-dot--2 { background: var(--navy); box-shadow: 0 0 0 2px var(--navy); }
+.timeline-dot--3 { background: var(--orange); box-shadow: 0 0 0 2px var(--orange); }
+
+.timeline-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* ═══════ FOOTER ═══════ */
+.footer {
+  background: var(--navy-dark);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.footer-email {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-line {
+  width: 40px;
+  height: 2px;
+  background: var(--teal);
+  margin: 1rem auto 0;
+}
+
+/* ═══════ PRINT ═══════ */
+@media print {
+  .nav { display: none; }
+  body { background: white; }
+  .cover { min-height: auto; padding: 3rem 2rem; break-after: page; }
+  section { break-inside: avoid; padding: 2rem 0; }
+  .card, .option-card, .constant-card, .big-number-card { break-inside: avoid; }
+  .hero-stat, .quote-block { break-inside: avoid; }
+  @page { margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ COVER ═══════ -->
+<div class="cover">
+  <div class="cover-badge">Strategic Vision</div>
+  <h1>90-Day Plan:<br>Director, Generation AI</h1>
+  <div class="cover-subtitle">A roadmap for scaling impact, stewarding partnerships, and building the infrastructure for what comes next.</div>
+  <div class="cover-meta">
+    <span>Prepared by Winston Roberts</span>
+    <span>March 2026</span>
+  </div>
+</div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#premise">The Premise</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#phase1">Days 1-30</a>
+    <a href="#phase2">Days 31-60</a>
+    <a href="#phase3">Days 61-90</a>
+    <a href="#constants">Constants</a>
+  </div>
+</nav>
+
+<!-- ═══════ PREMISE ═══════ -->
+<section id="premise">
+  <div class="container">
+    <span class="section-number">01</span>
+    <h2>The Premise</h2>
+    <p class="section-lead">Generation AI has built something real. The next Director inherits momentum. The question is what to do with it.</p>
+
+    <div class="big-number-row">
+      <div class="big-number-card">
+        <div class="big-number big-number--teal">$10M</div>
+        <div class="big-number-label">Google.org Grant</div>
+        <div class="big-number-desc">Funding the largest AI education initiative in the country</div>
+      </div>
+      <div class="big-number-card">
+        <div class="big-number">6</div>
+        <div class="big-number-label">Coalition Partners</div>
+        <div class="big-number-desc">Center for Black Educator Development, Indigitize, Latinos for Education, CSTA, NEA, PlayLab AI &middot; funded by Google</div>
+      </div>
+      <div class="big-number-card">
+        <div class="big-number big-number--gold">2027</div>
+        <div class="big-number-label">Grant Close</div>
+        <div class="big-number-desc">Every action positions impact to outlast the funding</div>
+      </div>
+    </div>
+
+    <p style="font-size: 0.95rem; color: var(--ink-light); line-height: 1.65; max-width: 750px;">The foundation has been laid: the Google.org partnership, the CoP model, the coalition of partners. What comes next is harder. Scaling without diluting quality. Turning one-time participants into sustained practitioners. Keeping the professional learning grounded in what actually transforms teaching, even as AI capabilities shift every few months.</p>
+    <br>
+    <p style="font-size: 0.95rem; color: var(--ink-light); line-height: 1.65; max-width: 750px;">This document outlines how I would approach the first 90 days.</p>
+  </div>
+</section>
+
+<!-- ═══════ ROADMAP TIMELINE ═══════ -->
+<section id="roadmap">
+  <div class="container">
+    <span class="section-number">02</span>
+    <h2>The Roadmap</h2>
+    <p class="section-lead">Three phases. Each builds on the one before it.</p>
+
+    <div class="timeline">
+      <div class="timeline-phase">
+        <div class="timeline-dot timeline-dot--1"></div>
+        <div class="timeline-label">Days 1-30</div>
+        <div class="timeline-title">Listen, Learn, Map</div>
+        <div class="timeline-desc">Audit every partner relationship, review grant deliverables, assess CoP cohorts, map internal infrastructure.</div>
+      </div>
+      <div class="timeline-phase">
+        <div class="timeline-dot timeline-dot--2"></div>
+        <div class="timeline-label">Days 31-60</div>
+        <div class="timeline-title">Identify Gaps</div>
+        <div class="timeline-desc">Evolve professional learning, deepen partnerships, assess the facilitator pipeline, analyze communications.</div>
+      </div>
+      <div class="timeline-phase">
+        <div class="timeline-dot timeline-dot--3"></div>
+        <div class="timeline-label">Days 61-90</div>
+        <div class="timeline-title">Execute First Initiative</div>
+        <div class="timeline-desc">Deliver one concrete improvement based on what the audit reveals. Three options, one decision.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHASE 1: DAYS 1-30 ═══════ -->
+<section id="phase1">
+  <div class="container">
+    <div class="phase-header">
+      <span class="phase-badge phase-badge--1">Phase 1</span>
+      <div>
+        <span class="section-number">03</span>
+        <h2>Days 1-30: Listen, Learn, Map</h2>
+      </div>
+    </div>
+    <p class="section-lead">Understand the full landscape before making any moves.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-type card-type--teal">Relationships</span>
+        <h3>Partner Relationship Audit</h3>
+        <ul>
+          <li>Schedule introductory or reintroduction calls with every coalition partner (Center for Black Educator Development, Indigitize, Latinos for Education, CSTA, NEA, PlayLab AI) and with the program's funder, Google</li>
+          <li>For each: understand their priorities, what they value most about the partnership, where they see gaps, and what success looks like from their side</li>
+          <li>Document the current state of each relationship: key contacts, what's been promised, delivered, and outstanding</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-type card-type--navy">Operations</span>
+        <h3>Program Deliverables Review</h3>
+        <ul>
+          <li>Map all grant deliverables against the remaining timeline (through late 2027)</li>
+          <li>Identify which deliverables are on track, which are at risk, and which have room for acceleration</li>
+          <li>Meet with the Senior Project Manager to understand current workflows, reporting cadences, and pain points</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-type card-type--green">Program</span>
+        <h3>CoP Cohort Assessment</h3>
+        <ul>
+          <li>Review participation and engagement data across all active CoP cohorts</li>
+          <li>Identify which cohorts are thriving and which need additional support</li>
+          <li>Talk to facilitators (including those I've worked alongside) about what's working and what's falling flat</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-type card-type--orange">Internal</span>
+        <h3>Internal Orientation</h3>
+        <ul>
+          <li>Understand ISTE+ASCD's internal structure: how Generation AI connects to Custom Learning Services, ISTE U (D2L), the editorial team, and the events team</li>
+          <li>Map the communications infrastructure: newsletter workflow, website CMS, social media coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHASE 2: DAYS 31-60 ═══════ -->
+<section id="phase2">
+  <div class="container">
+    <div class="phase-header">
+      <span class="phase-badge phase-badge--2">Phase 2</span>
+      <div>
+        <span class="section-number">04</span>
+        <h2>Days 31-60: Identify Gaps and Opportunities</h2>
+      </div>
+    </div>
+    <p class="section-lead">Turn the audit into a clear picture of where the program can improve.</p>
+
+    <div class="cards-grid">
+      <div class="card card--wide">
+        <span class="card-type card-type--teal">Professional Learning</span>
+        <h3>Professional Learning Evolution</h3>
+        <ul>
+          <li>Assess how well current PL content aligns with ISTE's Transformational Learning Principles and the Profile of an AI Ready Graduate framework (Learner, Researcher, Synthesizer, Problem Solver, Connector, Storyteller). These frameworks should anchor the program's direction as AI evolves.</li>
+          <li>Ensure the professional learning answers "why" before "what." Educators need to understand what agentic AI, multimodal models, and AI-generated content mean for how they design learning, in ways specific to their content area and context.</li>
+          <li>Identify where educators are in their AI readiness. Many schools are still at AI 101. Others are ready for deeper integration. The program should meet both.</li>
+          <li>Build a tighter feedback loop from CoP participants back into resource development. The best use cases are coming from the educators themselves.</li>
+        </ul>
+        <div class="insight">
+          <strong>Key principle:</strong> A math teacher and an ELA teacher should walk away with different applications of the same principle. Context-specific integration matters more than generic AI training.
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-type card-type--navy">Partnerships</span>
+        <h3>Partnership Deepening Strategy</h3>
+        <ul>
+          <li>Based on the audit: identify which partnerships are actively deepening vs. plateauing</li>
+          <li>For each partner, propose one concrete next step that adds value to both sides</li>
+          <li>Assess whether natural partner combinations could create joint programming (e.g., NEA's national reach paired with PlayLab AI's tooling, or Latinos for Education and Center for Black Educator Development co-anchoring an equity-focused cohort)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="card-type card-type--green">Pipeline</span>
+        <h3>Facilitator Pipeline Assessment</h3>
+        <ul>
+          <li>Evaluate the AI Cadre train-the-trainer model as the entry point for a facilitator pipeline</li>
+          <li>Identify high-performing CoP members who could eventually co-facilitate sessions or join CLS faculty</li>
+          <li>Map what a structured pathway from participant to facilitator would look like: selection criteria, training requirements, co-facilitation shadowing, independent facilitation</li>
+        </ul>
+      </div>
+
+      <div class="card card--wide">
+        <span class="card-type card-type--orange">Communications</span>
+        <h3>Communications Gap Analysis</h3>
+        <ul>
+          <li>Evaluate the monthly newsletter: open rates, content mix, audience segmentation</li>
+          <li>Review website content for accuracy and engagement</li>
+          <li>Assess conference presence strategy for remaining program timeline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHASE 3: DAYS 61-90 ═══════ -->
+<section id="phase3">
+  <div class="container">
+    <div class="phase-header">
+      <span class="phase-badge phase-badge--3">Phase 3</span>
+      <div>
+        <span class="section-number">05</span>
+        <h2>Days 61-90: Execute First Initiative</h2>
+      </div>
+    </div>
+    <p class="section-lead">Deliver one concrete improvement that demonstrates momentum. The right choice depends on what Days 1-60 surface.</p>
+
+    <div class="options-grid">
+      <div class="option-card">
+        <div class="option-header option-header--a">Option A</div>
+        <div class="option-body">
+          <div class="condition">If the constraint is facilitator capacity</div>
+          <h4>Facilitator Pipeline Launch</h4>
+          <p>Formalize the AI Cadre as the first cohort of a structured train-the-trainer program. Define selection criteria, develop a facilitator toolkit, and pilot a co-facilitation model where Cadre graduates shadow experienced facilitators in the next CoP convening.</p>
+          <div class="insight--gold insight" style="margin-top: 0.85rem;">
+            <strong>Equity lens:</strong> Leverage HBCU networks, including the Morehouse Center for Excellence in Education (Dr. Nina Gilbert) and organizations like the Center for Black Educator Development, to recruit Black educators into the pipeline. The program grows stronger when the people delivering it reflect the communities it serves.
+          </div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <div class="option-header option-header--b">Option B</div>
+        <div class="option-body">
+          <div class="condition">If the constraint is visibility of impact</div>
+          <h4>Partner Impact Report</h4>
+          <p>Produce a mid-program impact report for coalition partners: educator reach, CoP engagement data, participant outcomes, case studies. This gives partners material they can use internally to justify continued and expanded investment.</p>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <div class="option-header option-header--c">Option C</div>
+        <div class="option-body">
+          <div class="condition">If the gap is content alignment</div>
+          <h4>Content Alignment Sprint</h4>
+          <p>Run a focused sprint to evolve the highest-traffic PL modules. Ground the updates in ISTE's Transformational Learning Principles and the Profile of an AI Ready Graduate framework. Incorporate participant-generated use cases from CoP sessions.</p>
+          <div class="insight" style="margin-top: 0.85rem;">
+            <strong>The goal:</strong> Professional learning that helps educators think about AI's implications for student learning in ways specific to their context and content area.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONSTANTS ═══════ -->
+<section id="constants">
+  <div class="container">
+    <span class="section-number">06</span>
+    <h2>What Stays Constant</h2>
+    <p class="section-lead">Across all 90 days, three things hold.</p>
+
+    <div class="constants-grid">
+      <div class="constant-card">
+        <div class="constant-icon">&#9878;</div>
+        <h4>Practitioner Credibility</h4>
+        <p>Every recommendation I make will be grounded in what I've seen work in classrooms and CoP sessions.</p>
+      </div>
+
+      <div class="constant-card">
+        <div class="constant-icon">&#9741;</div>
+        <h4>Partner-First Orientation</h4>
+        <p>The coalition is the program's engine. Every decision gets filtered through: does this strengthen or strain our partner relationships?</p>
+      </div>
+
+      <div class="constant-card">
+        <div class="constant-icon">&#9881;</div>
+        <h4>Grant Stewardship</h4>
+        <p>This is a funded initiative with a timeline. Every action serves the deliverables and positions the program's impact to outlast the grant period.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<div class="footer">
+  <div class="footer-name">Winston Roberts</div>
+  <div class="footer-email">winstonroberts@teacherinasuit.com</div>
+  <div class="footer-line"></div>
+</div>
+
+</body>
+</html>
